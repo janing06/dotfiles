@@ -1,57 +1,102 @@
-24
- 23 export NVM_DIR="$HOME/.nvm"
- 22
- 21 export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
- 20
- 19 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
- 18 eval "$(anyenv init -)"
- 17 eval "$(anyenv init -)"
- 16 eval "$(anyenv init -)"
- 15
- 14 eval "$(starship init zsh)"
- 13
- 12 export _ZO_RESOLVE_SYMLINKS=1
- 11 eval "$(zoxide init zsh --cmd cd)"
- 10
-  9 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-  8 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  7
-  6  # --- Zsh History Config ---
-  5 HISTFILE=~/.zsh_history
-  4 HISTSIZE=10000
-  3 SAVEHIST=10000
-  2
-  1 setopt HIST_IGNORE_DUPS        # Ignore duplicate commands
-25  setopt HIST_IGNORE_ALL_DUPS    # Remove older duplicate entries
-  1 setopt SHARE_HISTORY           # Share history between terminal tabs
-  2 setopt INC_APPEND_HISTORY      # Immediately append to history file
-  3 setopt HIST_REDUCE_BLANKS      # Strip extra spaces
-  4 setopt HIST_VERIFY             # Let you edit before executing from history
-  5
-  6
-  7 export PATH="$HOME/scripts:$PATH"export PATH="/usr/local/opt/libpq/bin:$PATH"
-  8
-  9 # ALIASES
- 10 alias ga='git add -A'
- 11 alias gu='git restore --staged $(git rev-parse --show-toplevel)/'
- 12 alias gc='git cz'
- 13 alias gulc="git reset --soft HEAD~1"
- 14 alias gs='git status'
- 15 alias gps='git push'
- 16 alias gpf='git push --force-with-lease'
- 17 alias gph='git push -u origin HEAD'
- 18 alias gf='git fetch'
- 19 alias gp='gf; git pull'
- 20 alias mbs='make backend/start'
- 21 alias mgs='make gateway/start'
- 22 alias mge='make gateway/metadata/export'
- 23 alias mfs='make frontend/start'
- 24 alias gb="git branch --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:cyan)%(authorname)%(color:reset) %(color:dim white)(%(committerdate:relative))%(colo
-    r:reset)'"
- 25 alias gst="git stash -u"
- 26 alias gsta="git stash apply"
- 27 alias gstp="git stash pop"
- 28 alias gcon="git checkout -b"
- 29 alias vim="nvim"
- 30 alias lua-config="nvim ~/.config/nvim"
-.zshrc                                                                                                                                                                                     25,63          Top
+
+export NVM_DIR="$HOME/.nvm"
+ 
+export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(anyenv init -)"
+eval "$(anyenv init -)"
+eval "$(anyenv init -)"
+
+eval "$(starship init zsh)"
+
+export _ZO_RESOLVE_SYMLINKS=1
+eval "$(zoxide init zsh --cmd cd)"
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ 
+ # --- Zsh History Config ---
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt HIST_IGNORE_DUPS        # Ignore duplicate commands
+setopt HIST_IGNORE_ALL_DUPS    # Remove older duplicate entries
+setopt SHARE_HISTORY           # Share history between terminal tabs
+setopt INC_APPEND_HISTORY      # Immediately append to history file
+setopt HIST_REDUCE_BLANKS      # Strip extra spaces
+setopt HIST_VERIFY             # Let you edit before executing from history
+
+
+export PATH="$HOME/scripts:$PATH"export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# ALIASES
+alias ga='git add -A'
+alias gu='git restore --staged $(git rev-parse --show-toplevel)/'
+alias gc='git cz'
+alias gulc="git reset --soft HEAD~1" 
+alias gs='git status'
+alias gps='git push'
+alias gpf='git push --force-with-lease'
+alias gph='git push -u origin HEAD'
+alias gf='git fetch'
+alias gp='gf; git pull'
+alias mbs='make backend/start'
+alias mgs='make gateway/start'
+alias mge='make gateway/metadata/export'
+alias mfs='make frontend/start'
+alias gb="git branch --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:cyan)%(authorname)%(color:reset) %(color:dim white)(%(committerdate:relative))%(color:reset)'"
+alias gst="git stash -u"
+alias gsta="git stash apply"
+alias gstp="git stash pop"
+alias gcon="git checkout -b"
+alias vim="nvim"
+alias lua-config="nvim ~/.config/nvim"
+alias aerospace-config="vim ~/.config/aerospace/aerospace.toml" 
+alias ghostty-config="vim $HOME/Library/Application\ Support/com.mitchellh.ghostty/config" 
+alias gd="git checkout -- ."
+ 
+alias gll='git log --pretty="%C(auto)%h %C(auto)%d%Creset%n    %C(cyan)%an %C(dim white)%ad%n    %s%Creset%n" --date=format:"%a %Y-%m-%d %H:%M"  --graph'
+alias glla='git log --full-history --pretty="%C(auto)%h %C(auto)%d%Creset%n    %C(cyan)%an %C(dim white)%ad%n    %s%Creset%n" --date=format:"%a %Y-%m-%d %H:%M"  --date-order --skip=0 --branches --tags --remotes --graph'
+
+# NOTE: FZF
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+# export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+# 
+# export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+# 
+# # Setup fzf previews
+# export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+# export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+
+export FZF_CTRL_T_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' --bind 'enter:execute(nvim {} > /dev/tty < /dev/tty)+abort'"
+
+alias check="npm run generate-graphql; npm run build; npm run steiger"
+
+function gco () {
+    if [[ $# -eq 0 ]]; then
+        gb | fzf --reverse | xargs | cut -d ' ' -f 1 | xargs git checkout
+    else
+        git checkout "$@"
+    fi
+}
+
+function gcoa {
+    gb --all | fzf --reverse | xargs | cut -d ' ' -f 1 | sed 's/^origin\///' | xargs git checkout
+}
+
+
+# Use vim keybindings for zsh
+# bindkey -v
+# bindkey -M viins 'kj' vi-cmd-mode
+# bindkey -v '^?' backward-delete-char
+
+export PATH=$HOME/.npm-global/bin:$PATH
+
+alias claude="/Users/jhonmichaelturija/.claude/local/claude"
