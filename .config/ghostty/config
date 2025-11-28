@@ -1,0 +1,10 @@
+theme = catppuccin-macchiato
+title = " "
+macos-titlebar-proxy-icon = hidden
+window-padding-x = 20
+window-padding-x = 10
+background-opacity = 0.8
+background-blur = true
+window-height=510
+window-width=1640
+keybind = shift+enter=text:\n
