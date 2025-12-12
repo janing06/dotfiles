@@ -33,3 +33,33 @@ vim.keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true })
 vim.keymap.set('n', 'gh', function()
   require('vscode-neovim').action('editor.action.showDefinitionPreviewHover')
 end, { noremap = true, silent = true })
+
+-- ===== VSCode-Neovim: Jump to errors / problems =====
+-- Next error/problem across all files
+vim.keymap.set("n", "]e", function()
+    require('vscode-neovim').action('editor.action.marker.nextInFiles')
+end, { noremap = true, silent = true })
+
+-- Previous error/problem across all files
+vim.keymap.set("n", "[e", function()
+    require('vscode-neovim').action('editor.action.marker.prevInFiles')
+end, { noremap = true, silent = true })
+
+-- Next error/problem in current file only
+vim.keymap.set("n", "]E", function()
+    require('vscode-neovim').action('editor.action.marker.next')
+end, { noremap = true, silent = true })
+
+-- Previous error/problem in current file only
+vim.keymap.set("n", "[E", function()
+    require('vscode-neovim').action('editor.action.marker.prev')
+end, { noremap = true, silent = true })
+ 
+-- ===== VSCode-Neovim: Jump to next/previous change =====
+vim.keymap.set("n", "]c", function()
+    require('vscode-neovim').action('workbench.action.editor.nextChange')
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "[c", function()
+    require('vscode-neovim').action('workbench.action.editor.previousChange')
+end, { noremap = true, silent = true })
