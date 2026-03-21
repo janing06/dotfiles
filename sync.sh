@@ -39,6 +39,7 @@ cp ~/.config/zed/settings.json "$DOTFILES/.config/zed/settings.json"
 # Claude
 cp ~/.claude/CLAUDE.md "$DOTFILES/.claude/CLAUDE.md"
 cp ~/.claude/keybindings.json "$DOTFILES/.claude/keybindings.json"
+cp ~/.claude/settings.json "$DOTFILES/.claude/settings.json"
 rsync -a --delete ~/.claude/commands/ "$DOTFILES/.claude/commands/"
 
 echo "Done. Review changes with: git diff"
