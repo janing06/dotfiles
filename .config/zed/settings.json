@@ -161,8 +161,8 @@
   // ===============================
   // Font & UI
   // ===============================
-  "ui_font_size": 13,
-  "buffer_font_size": 15,
+  "ui_font_size": 12,
+  "buffer_font_size": 10,
   // ===============================
   // Icon Theme — install "Catppuccin Icons" for something close to ayu
   // ===============================
