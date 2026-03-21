@@ -1,46 +1,46 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(gph:*)",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git log:*)",
-      "Bash(git push:*)",
-      "Bash(git pull:*)",
-      "Bash(npm run lint:fix:*)",
-      "Bash(npm run format:*)",
-      "Bash(gh pr create:*)",
-      "Bash(gh pr view:*)",
-      "Bash(supabase migration up:*)",
-      "Bash(supabase db reset:*)"
-    ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": ".*claude.*", 
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Mana part\" with title \"Claude Code\"' 2>/dev/null || true"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": ".*claude.*", 
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Awa daw\" with title \"Claude Code\"' 2>/dev/null || true"
-          }
-        ]
-      }
-    ]
-  },
-  "model": "sonnet",
-  "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
-  }
+		"permissions": {
+				"allow": [
+						"Bash(gph:*)",
+						"Bash(git status:*)",
+						"Bash(git diff:*)",
+						"Bash(git log:*)",
+						"Bash(git push:*)",
+						"Bash(git pull:*)",
+						"Bash(npm run lint:fix:*)",
+						"Bash(npm run format:*)",
+						"Bash(gh pr create:*)",
+						"Bash(gh pr view:*)",
+						"Bash(supabase migration up:*)",
+						"Bash(supabase db reset:*)"
+				]
+		},
+		"hooks": {
+				"Stop": [
+						{
+								"matcher": ".*claude.*", 
+								"hooks": [
+										{
+												"type": "command",
+												"command": "osascript -e 'display notification \"Mana part\" with title \"Claude Code\"' 2>/dev/null || true"
+										}
+								]
+						}
+				],
+				"Notification": [
+						{
+								"matcher": ".*claude.*", 
+								"hooks": [
+										{
+												"type": "command",
+												"command": "osascript -e 'display notification \"Awa daw\" with title \"Claude Code\"' 2>/dev/null || true"
+										}
+								]
+						}
+				]
+		},
+		"model": "sonnet",
+		"enabledPlugins": {
+				"superpowers@claude-plugins-official": true
+		}
 }
