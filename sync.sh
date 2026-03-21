@@ -36,6 +36,9 @@ cp ~/.config/tmux/tmux.conf "$DOTFILES/.config/tmux/tmux.conf" 2>/dev/null || tr
 cp ~/.config/zed/keymap.json "$DOTFILES/.config/zed/keymap.json"
 cp ~/.config/zed/settings.json "$DOTFILES/.config/zed/settings.json"
 
+# Opencode
+cp ~/.config/opencode/AGENTS.md "$DOTFILES/.config/opencode/AGENTS.md"
+
 # Claude
 cp ~/.claude/CLAUDE.md "$DOTFILES/.claude/CLAUDE.md"
 cp ~/.claude/keybindings.json "$DOTFILES/.claude/keybindings.json"
