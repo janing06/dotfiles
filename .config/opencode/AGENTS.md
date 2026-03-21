@@ -114,6 +114,7 @@
 ### Committing
 - **Never commit automatically** — do not commit on your own initiative
 - Wait for the user to explicitly trigger a commit via `/commit`
+- Wait for the user to explicitly trigger a pull request via `/pr`
 - Do not bulk-commit all changes at once; commit each logical change separately as the user invokes `/commit`
 
 ### Commit Style

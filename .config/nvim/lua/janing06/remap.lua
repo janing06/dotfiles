@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>o", ':update<CR> :source<CR>')
 vim.keymap.set("n", "<CR>", "o<leader><Esc>", { noremap = true, silent = true })
 
 -- Indent entire file then save with space+s
-vim.keymap.set("n", "<leader>s", "gg=G`z:w<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>s", "mzgg=G`z:w<CR>", { noremap = true, silent = true })
 
 -- Disable arrow keys in normal mode and insert mode
 vim.keymap.set({ "n", "i"}, "<Up>", "<NOP>", { noremap = true, silent = true })
