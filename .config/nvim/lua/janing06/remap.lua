@@ -6,6 +6,9 @@ vim.g.mapleader = " "
 
 -- Space + q to quit file in neovim
 vim.keymap.set("n", "<leader>q", vim.cmd.Ex)
+ 
+-- Space o to source 
+vim.keymap.set("n", "<leader>o", ':update<CR> :source<CR>')
 
 -- Return to Visual mode after inserting new line
 vim.keymap.set("n", "<CR>", "o<leader><Esc>", { noremap = true, silent = true })
@@ -29,11 +32,7 @@ vim.keymap.set({'n', 'v'}, ':', ';', { noremap = true })
 
 -- Prevent losing clipboard when pasting
 vim.keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true })
-
-vim.keymap.set('n', 'gh', function()
-  require('vscode-neovim').action('editor.action.showDefinitionPreviewHover')
-end, { noremap = true, silent = true })
-
+ 
 -- ===== VSCode-Neovim: Jump to errors / problems =====
 -- Next error/problem across all files
 vim.keymap.set("n", "]e", function()

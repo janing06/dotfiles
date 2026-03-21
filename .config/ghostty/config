@@ -3,11 +3,11 @@ title = " "
 macos-titlebar-proxy-icon = hidden
 window-padding-x = 20
 window-padding-x = 10
-background-opacity = 1.0 
+background-opacity = 0.8 
 background-blur = true
 window-height=510
 window-width=1640
-keybind = shift+enter=text:\n
+adjust-cursor-thickness=10
  
 # cmd+num for tmux tabs
 keybind = cmd+digit1=text:\x13\x31
@@ -20,6 +20,9 @@ keybind = cmd+digit7=text:\x13\x37
 keybind = cmd+digit8=text:\x13\x38
 keybind = cmd+digit9=text:\x13\x39
  
+keybind = shift+enter=text:\n
+
+ 
 # Shaders
 custom-shader = shaders/cursor_sweep.glsl
-custom-shader = shaders/ripple_rectangle_cursor.glsl
+custom-shader = shaders/ripple_cursor.glsl

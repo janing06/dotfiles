@@ -21,7 +21,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 15 
+accordion-padding = 10 
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -57,12 +57,12 @@ automatically-unhide-macos-hidden-apps = false
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
-    outer.left =       10
-    outer.bottom =     10
-    outer.top =        10
-    outer.right =      10
+    inner.horizontal = 5
+    inner.vertical =   5
+    outer.left =       5
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -142,7 +142,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-r = 'workspace R'
     alt-s = 'workspace S'
     alt-t = 'workspace T'
-    alt-u = 'workspace U'
+    #alt-u = 'workspace U'
     alt-v = 'workspace V'
     alt-w = 'workspace W'
     alt-x = 'workspace X'
@@ -175,7 +175,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-r = 'move-node-to-workspace R'
     alt-shift-s = 'move-node-to-workspace S'
     alt-shift-t = 'move-node-to-workspace T'
-    alt-shift-u = 'move-node-to-workspace U'
+    # alt-shift-u = 'move-node-to-workspace U'
     alt-shift-v = 'move-node-to-workspace V'
     alt-shift-w = 'move-node-to-workspace W'
     alt-shift-x = 'move-node-to-workspace X'
@@ -232,7 +232,7 @@ if.app-id ='com.brave.Browser'
 run = ['move-node-to-workspace 1']      
  
 [[on-window-detected]]
-if.app-id ='com.todesktop.230313mzl4w4u92'
+if.app-id ='dev.zed.Zed'
 run = ['move-node-to-workspace 2']      
  
 [[on-window-detected]]
@@ -266,6 +266,10 @@ run = ['move-node-to-workspace 9']
 [[on-window-detected]]
 if.app-id ='com.apple.iCal'
 run = ['move-node-to-workspace C']      
+ 
+[[on-window-detected]]
+if.app-id ='jp.co.capcom.RE4US'
+run = ['move-node-to-workspace H']      
  
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
