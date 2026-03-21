@@ -75,6 +75,8 @@
       "cmd-]": "pane::ActivateNextItem",
       // Kill terminal (cmd+w)
       "cmd-w": "pane::CloseActiveItem",
+      // Disable close-all-editors when terminal is focused
+      "ctrl-cmd-0": null,
       // Clear terminal (ctrl+p)
       "ctrl-p": "terminal::Clear",
       // Tab navigation by index — must be repeated here so terminal doesn't swallow the keys
