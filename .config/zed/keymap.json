@@ -1,0 +1,199 @@
+[
+  // ===============================
+  // Global
+  // ===============================
+  {
+    "bindings": {
+      // Open git panel (cmd+shift+g)
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      // Close all editors (ctrl+cmd+0)
+      "ctrl-cmd-0": "pane::CloseAllItems",
+      // Collapse all folders in explorer (works from any focus)
+      "ctrl-0": "project_panel::CollapseAllEntries",
+      // Tab navigation by index (cmd+1-9)
+      "cmd-1": [
+        "pane::ActivateItem",
+        0
+      ],
+      "cmd-2": [
+        "pane::ActivateItem",
+        1
+      ],
+      "cmd-3": [
+        "pane::ActivateItem",
+        2
+      ],
+      "cmd-4": [
+        "pane::ActivateItem",
+        3
+      ],
+      "cmd-5": [
+        "pane::ActivateItem",
+        4
+      ],
+      "cmd-6": [
+        "pane::ActivateItem",
+        5
+      ],
+      "cmd-7": [
+        "pane::ActivateItem",
+        6
+      ],
+      "cmd-8": [
+        "pane::ActivateItem",
+        7
+      ],
+      "cmd-9": [
+        "pane::ActivateItem",
+        8
+      ]
+    }
+  },
+  // ===============================
+  // Project Panel (Explorer)
+  // ===============================
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      // New file (ctrl+n)
+      "ctrl-n": "project_panel::NewFile",
+      // New folder (ctrl+shift+n)
+      "ctrl-shift-n": "project_panel::NewDirectory",
+      // (collapse all is in global bindings so it works from any focus)
+    }
+  },
+  // ===============================
+  // Terminal
+  // ===============================
+  {
+    "context": "Terminal",
+    "bindings": {
+      // New terminal (cmd+d)
+      "cmd-d": "workspace::NewTerminal",
+      // Navigate terminals (cmd+[ / cmd+])
+      "cmd-[": "pane::ActivatePreviousItem",
+      "cmd-]": "pane::ActivateNextItem",
+      // Kill terminal (cmd+w)
+      "cmd-w": "pane::CloseActiveItem",
+      // Clear terminal (ctrl+p)
+      "ctrl-p": "terminal::Clear",
+      // Tab navigation by index — must be repeated here so terminal doesn't swallow the keys
+      "cmd-1": [
+        "pane::ActivateItem",
+        0
+      ],
+      "cmd-2": [
+        "pane::ActivateItem",
+        1
+      ],
+      "cmd-3": [
+        "pane::ActivateItem",
+        2
+      ],
+      "cmd-4": [
+        "pane::ActivateItem",
+        3
+      ],
+      "cmd-5": [
+        "pane::ActivateItem",
+        4
+      ],
+      "cmd-6": [
+        "pane::ActivateItem",
+        5
+      ],
+      "cmd-7": [
+        "pane::ActivateItem",
+        6
+      ],
+      "cmd-8": [
+        "pane::ActivateItem",
+        7
+      ],
+      "cmd-9": [
+        "pane::ActivateItem",
+        8
+      ]
+    }
+  },
+  // ===============================
+  // Editor
+  // ===============================
+  {
+    "context": "Editor",
+    "bindings": {
+      // Select/expand current line (ctrl+p)
+      "ctrl-p": "editor::SelectLine",
+      // Fold (cmd+[)
+      "cmd-[": "editor::Fold",
+      // Unfold (cmd+])
+      "cmd-]": "editor::UnfoldLines",
+      // Markdown preview (shift+cmd+k) — only activates for markdown files
+      "shift-cmd-k": "markdown::OpenPreview"
+    }
+  },
+  // ===============================
+  // Vim — Normal Mode
+  // (from ~/.config/nvim/lua/janing06/remap.lua)
+  // ===============================
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // <leader>s → save (:w)
+      "space s": "workspace::Save",
+      // <leader>q → close file (:q)
+      "space q": "pane::CloseActiveItem",
+      // J → <C-d>zz (half page down + center), K → <C-u>zz (half page up + center)
+      "shift-j": [
+        "workspace::SendKeystrokes",
+        "ctrl-d z z"
+      ],
+      "shift-k": [
+        "workspace::SendKeystrokes",
+        "ctrl-u z z"
+      ],
+      // Swap ; and : — ; opens command line, : repeats f/t find
+      ";": "command_palette::Toggle",
+      "shift-semicolon": "vim::RepeatFind",
+      // ]e / [e → next/prev diagnostic
+      "] e": "editor::GoToDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
+      "] shift-e": "editor::GoToDiagnostic",
+      "[ shift-e": "editor::GoToPreviousDiagnostic",
+      // ]c / [c → next/prev git hunk
+      "] c": "editor::GoToHunk",
+      "[ c": "editor::GoToPreviousHunk"
+    }
+  },
+  // ===============================
+  // Vim — Visual Mode
+  // ===============================
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      // J → <C-d>zz (half page down + center), K → <C-u>zz (half page up + center)
+      "shift-j": [
+        "workspace::SendKeystrokes",
+        "ctrl-d z z"
+      ],
+      "shift-k": [
+        "workspace::SendKeystrokes",
+        "ctrl-u z z"
+      ],
+      // <leader>p → paste without overwriting clipboard ("_dP)
+      "space p": [
+        "vim::Paste",
+        {
+          "preserve_clipboard": true
+        }
+      ]
+    }
+  },
+  // ===============================
+  // Vim — Insert Mode
+  // ===============================
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {}
+  },
+]

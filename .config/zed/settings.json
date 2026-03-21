@@ -1,0 +1,174 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+      "effort": "high"
+    },
+    "dock": "left",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "git_panel": {
+    "dock": "right",
+    "tree_view": true
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  // ===============================
+  // Vim
+  // ===============================
+  "vim_mode": true,
+  "vim": {
+    "highlight_on_yank_duration": 80
+  },
+  // ===============================
+  // Editor Behavior
+  // ===============================
+  "soft_wrap": "none",
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "line_numbers": true
+  },
+  "hover_popover_enabled": true,
+  "hover_popover_delay": 300,
+  "cursor_blink": true,
+  "tab_size": 2,
+  "base_keymap": "VSCode",
+  // ===============================
+  // Formatting (Biome as primary LSP formatter)
+  // ===============================
+  "format_on_save": "on",
+  "formatter": "language_server",
+  "languages": {
+    "TypeScript": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": [
+        "biome",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true
+      }
+    },
+    "TSX": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": [
+        "biome",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true
+      }
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": [
+        "biome",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true
+      }
+    },
+    "JSX": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": [
+        "biome",
+        "..."
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true
+      }
+    },
+    "Terraform": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
+    "Prisma": {
+      "format_on_save": "on",
+      "formatter": "language_server"
+    }
+  },
+  // ===============================
+  // Terminal
+  // ===============================
+  "terminal": {
+    "env": {},
+    "shell": {
+      "program": "zsh"
+    }
+  },
+  // ===============================
+  // Project Panel (Explorer) — docked right to match Cursor sidebar
+  // ===============================
+  "project_panel": {
+    "dock": "right",
+    "show_diagnostics": "errors"
+  },
+  "outline_panel": {
+    "dock": "right",
+    "git_status": false
+  },
+  // ===============================
+  // Tabs & Preview
+  // ===============================
+  "tabs": {
+    "git_status": true,
+    "show_diagnostics": "errors"
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": false
+  },
+  // ===============================
+  // Theme — install "Catppuccin" extension via `zed: extensions`
+  // ===============================
+  "experimental.theme_overrides": {
+    "players": [
+      {
+        "cursor": "#f9e2afff",
+        "selection": "#f9e2af40"
+      }
+    ]
+  },
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha"
+  },
+  // ===============================
+  // Font & UI
+  // ===============================
+  "ui_font_size": 13,
+  "buffer_font_size": 15,
+  // ===============================
+  // Icon Theme — install "Catppuccin Icons" for something close to ayu
+  // ===============================
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "VSCode Icons for Zed (Dark Angular)"
+  }
+}
