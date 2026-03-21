@@ -30,7 +30,8 @@ alias gsta="git stash apply"
 alias tclean="tmux kill-session -a"
 alias tkr='tmux kill-server' 
 alias tks='tmux kill-session' 
-alias cc='claude' 
+alias ccd='claude' 
+alias oc='opencode' 
  
 alias gll='git log --pretty="%C(auto)%h %C(auto)%d%Creset%n    %C(cyan)%an %C(dim white)%ad%n    %s%Creset%n" --date=format:"%a %Y-%m-%d %H:%M"  --graph'
 alias glla='git log --full-history --pretty="%C(auto)%h %C(auto)%d%Creset%n    %C(cyan)%an %C(dim white)%ad%n    %s%Creset%n" --date=format:"%a %Y-%m-%d %H:%M"  --date-order --skip=0 --branches --tags --remotes --graph'
