@@ -156,19 +156,19 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Macchiato (Blur) [Heavy]"
+    "dark": "Catppuccin Macchiato"
   },
   // ===============================
   // Font & UI
   // ===============================
-  "ui_font_size": 12,
-  "buffer_font_size": 10,
+  "ui_font_size": 15,
+  "buffer_font_size": 12,
   // ===============================
   // Icon Theme — install "Catppuccin Icons" for something close to ayu
   // ===============================
   "icon_theme": {
     "mode": "system",
     "light": "Zed (Default)",
-    "dark": "VSCode Icons for Zed (Dark Angular)"
-  }
+    "dark": "Material Icon Theme"
+  },
 }
