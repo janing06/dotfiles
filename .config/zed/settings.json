@@ -7,7 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "collaboration_panel": {
+    "dock": "left"
+  },
   "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "gemini-3.1-pro-preview",
+      "enable_thinking": false
+    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
@@ -19,6 +27,9 @@
     "model_parameters": []
   },
   "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    },
     "claude-acp": {
       "type": "registry"
     }
@@ -137,7 +148,7 @@
   // ===============================
   "tabs": {
     "git_status": true,
-    "show_diagnostics": "errors"
+    "show_diagnostics": "all"
   },
   "preview_tabs": {
     "enable_preview_from_file_finder": false
@@ -161,14 +172,14 @@
   // ===============================
   // Font & UI
   // ===============================
-  "ui_font_size": 15,
+  "ui_font_size": 12,
   "buffer_font_size": 12,
   // ===============================
   // Icon Theme — install "Catppuccin Icons" for something close to ayu
   // ===============================
   "icon_theme": {
-    "mode": "system",
-    "light": "Zed (Default)",
+    "mode": "light",
+    "light": "Material Icon Theme",
     "dark": "Material Icon Theme"
   },
 }

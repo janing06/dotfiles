@@ -20,6 +20,12 @@ keybind = cmd+digit7=text:\x13\x37
 keybind = cmd+digit8=text:\x13\x38
 keybind = cmd+digit9=text:\x13\x39
  
+keybind = super+shift+h=text:\x13\x70
+keybind = super+shift+l=text:\x13\x6e
+ 
+keybind = super+shift+bracket_left=text:\x13\x70
+keybind = super+shift+bracket_right=text:\x13\x6e
+
 keybind = shift+enter=text:\n
  
 # Shaders

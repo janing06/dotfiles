@@ -272,6 +272,14 @@ if.app-id ='jp.co.capcom.RE4US'
 run = ['move-node-to-workspace H']      
  
 [[on-window-detected]]
+if.app-id ='com.figma.Desktop'
+run = ['move-node-to-workspace F']      
+ 
+[[on-window-detected]]
+if.app-id ='dev.pencil.desktop'
+run = ['move-node-to-workspace P']      
+ 
+[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = ['layout floating']          
  
@@ -282,6 +290,11 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.calculator'
 run = ['layout floating']          
+ 
+[[on-window-detected]]
+if.app-name-regex-substring = 'mpv'
+check-further-callbacks = false
+run = ['layout floating']
  
 # Catch-all rule (default workspace)
 [[on-window-detected]]

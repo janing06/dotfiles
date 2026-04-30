@@ -26,6 +26,14 @@ cp ~/.config/karabiner/karabiner.json "$DOTFILES/.config/karabiner/karabiner.jso
 # Neovim (full directory)
 rsync -a --delete ~/.config/nvim/ "$DOTFILES/.config/nvim/"
 
+# Yazi
+cp ~/.config/yazi/yazi.toml "$DOTFILES/.config/yazi/yazi.toml"
+cp ~/.config/yazi/keymap.toml "$DOTFILES/.config/yazi/keymap.toml"
+
+# mpv
+cp ~/.config/mpv/mpv.conf "$DOTFILES/.config/mpv/mpv.conf"
+cp ~/.config/mpv/input.conf "$DOTFILES/.config/mpv/input.conf"
+
 # Starship
 cp ~/.config/starship.toml "$DOTFILES/.config/starship.toml"
 
