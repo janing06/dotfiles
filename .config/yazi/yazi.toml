@@ -17,6 +17,7 @@ rules = [
   { mime = "*/typescript", use = "edit" },
   { mime = "*/xml", use = "edit" },
   { mime = "inode/empty", use = "edit" },
+  { mime = "image/*", use = "play" },
   { mime = "video/*", use = "play" },
   { mime = "*", use = "open" },
 ]
