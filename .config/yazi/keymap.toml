@@ -1,4 +1,9 @@
 [[mgr.prepend_keymap]]
+on = "<C-f>"
+run = "quit"
+desc = "Quit Yazi"
+
+[[mgr.prepend_keymap]]
 on = "<C-g>"
 run = "shell --confirm -- /Users/jhonmichaelturija/bin/drag %s"
 desc = "Drag and drop selected file(s)"
