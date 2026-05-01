@@ -1,4 +1,14 @@
 [[mgr.prepend_keymap]]
+on = "J"
+run = "arrow 50%"
+desc = "Half page down"
+
+[[mgr.prepend_keymap]]
+on = "K"
+run = "arrow -50%"
+desc = "Half page up"
+
+[[mgr.prepend_keymap]]
 on = "<C-f>"
 run = "quit"
 desc = "Quit Yazi"

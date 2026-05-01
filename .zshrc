@@ -50,6 +50,7 @@ alias glla='git log --full-history --pretty="%C(auto)%h %C(auto)%d%Creset%n    %
 # NOTE: FZF
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+bindkey -e
 
 function gco () {
 		if [[ $# -eq 0 ]]; then
@@ -89,4 +90,4 @@ function yazi_cd() {
 zle -N yazi_cd
 bindkey '^f' yazi_cd
  
- export EDITOR="nvim"
+# export EDITOR="nvim"
