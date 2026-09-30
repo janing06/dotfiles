@@ -1,50 +1,104 @@
 {
+  "env": {
+    "DISABLE_ZOXIDE": "1"
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "Bash(gph:*)",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git log:*)",
-      "Bash(git push:*)",
-      "Bash(git pull:*)",
-      "Bash(npm run lint:fix:*)",
-      "Bash(npm run format:*)",
-      "Bash(gh pr create:*)",
-      "Bash(gh pr view:*)",
-      "Bash(supabase migration up:*)",
-      "Bash(supabase db reset:*)",
       "mcp__pencil"
-    ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "matcher": ".*claude.*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"Mana part\" with title \"Claude Code\"' 2>/dev/null || true"
-          }
-        ]
-      }
     ],
+    "defaultMode": "auto"
+  },
+  "enabledMcpjsonServers": [
+    "figma",
+    "notion",
+    "jira",
+    "pencil"
+  ],
+  "hooks": {
     "Notification": [
       {
         "matcher": ".*claude.*",
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"Awa daw\" with title \"Claude Code\"' 2>/dev/null || true"
+            "command": "jq -r '.message // \"Awa daw part\"' | { read -r msg; osascript -e \"display notification \\\"$msg\\\" with title \\\"Claude Code\\\" sound name \\\"Blow\\\"\"; }"
+          }
+        ]
+      },
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tmux-expose agent-status attention 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*claude.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Mana part\" with title \"Claude Code\" sound name \"Blow\"'"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tmux-expose agent-status waiting 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tmux-expose agent-status working 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tmux-expose agent-status clear 2>/dev/null || true"
           }
         ]
       }
     ]
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "figma@claude-plugins-official": true
+    "superpowers@superpowers-marketplace": true,
+    "figma@claude-plugins-official": true,
+    "cc-analytics@hapins-claude-plugins": true,
+    "frontend-design@claude-plugins-official": true
   },
-  "skipDangerousModePermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "hapins-claude-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "hapins/hapins-claude-plugins"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "tui": "default",
+  "skipAutoPermissionPrompt": true,
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(terraform apply:*) in infrastructure/environments/production — Protected-Scope IaC Apply already covers prod, but explicit prod terraform apply/destroy calls should stay soft-blocked pending confirmation",
+      "Bash(kubectl:*) writes targeting namespace flags outside admin/client/server/seeds (unrecognized namespace) — Shared Cluster Mutation caution"
+    ]
+  },
   "model": "opus"
 }
