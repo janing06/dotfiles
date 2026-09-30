@@ -3,7 +3,7 @@ title = " "
 macos-titlebar-proxy-icon = hidden
 window-padding-x = 20
 window-padding-y = 10
-background-opacity = 0.9 
+background-opacity = 0.95
 background-blur = true
 window-height=510
 window-width=1640
@@ -20,14 +20,38 @@ keybind = cmd+digit7=text:\x13\x37
 keybind = cmd+digit8=text:\x13\x38
 keybind = cmd+digit9=text:\x13\x39
  
+keybind = shift+enter=text:\n
+ 
 keybind = super+shift+h=text:\x13\x70
 keybind = super+shift+l=text:\x13\x6e
  
 keybind = super+shift+bracket_left=text:\x13\x70
 keybind = super+shift+bracket_right=text:\x13\x6e
 
-keybind = shift+enter=text:\n
- 
+# ctrl+cmd+[ ] for prev/next tmux session
+keybind = ctrl+super+bracket_left=text:\x13\x28
+keybind = ctrl+super+bracket_right=text:\x13\x29
+
+# cmd+s for tmux.expose session grid (prefix + e)
+keybind = cmd+s=text:\x13\x65
+
+# cmd+r to rename tmux window (prefix + ,)
+keybind = cmd+r=text:\x13\x2c
+
+# cmd+shift+r to rename tmux session (prefix + $)
+keybind = cmd+shift+r=text:\x13\x24
+
+# cmd+x to kill tmux pane (prefix + x)
+keybind = cmd+x=text:\x13\x78
+
+# cmd+; for tmux command prompt (prefix + :)
+keybind = cmd+semicolon=text:\x13\x3a
+
+# cmd+shift+c to create tmux window (prefix + c)
+keybind = cmd+shift+c=text:\x13\x63
+
 # Shaders
 custom-shader = shaders/cursor_sweep.glsl
 custom-shader = shaders/ripple_cursor.glsl
+ 
+keybind = cmd+enter=text:\n
