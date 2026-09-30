@@ -24,7 +24,7 @@ cp ~/.config/git/ignore "$DOTFILES/.config/git/ignore"
 cp ~/.config/karabiner/karabiner.json "$DOTFILES/.config/karabiner/karabiner.json"
 
 # Neovim (full directory)
-rsync -a --delete ~/.config/nvim/ "$DOTFILES/.config/nvim/"
+rsync -a --delete --exclude .DS_Store ~/.config/nvim/ "$DOTFILES/.config/nvim/"
 
 # Yazi
 cp ~/.config/yazi/yazi.toml "$DOTFILES/.config/yazi/yazi.toml"
@@ -51,6 +51,8 @@ cp ~/.config/opencode/AGENTS.md "$DOTFILES/.config/opencode/AGENTS.md"
 cp ~/.claude/CLAUDE.md "$DOTFILES/.claude/CLAUDE.md"
 cp ~/.claude/keybindings.json "$DOTFILES/.claude/keybindings.json"
 cp ~/.claude/settings.json "$DOTFILES/.claude/settings.json"
+# This repo is public — never commit the telemetry bearer token
+sed -i '' -E 's/(Authorization=Bearer )[^"]+/\1REDACTED/' "$DOTFILES/.claude/settings.json"
 rsync -a --delete ~/.claude/commands/ "$DOTFILES/.claude/commands/"
 
 echo "Done. Review changes with: git diff"
