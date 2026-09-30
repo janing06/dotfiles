@@ -50,9 +50,9 @@ cp ~/.config/opencode/AGENTS.md "$DOTFILES/.config/opencode/AGENTS.md"
 # Claude
 cp ~/.claude/CLAUDE.md "$DOTFILES/.claude/CLAUDE.md"
 cp ~/.claude/keybindings.json "$DOTFILES/.claude/keybindings.json"
-cp ~/.claude/settings.json "$DOTFILES/.claude/settings.json"
-# This repo is public — never commit the telemetry bearer token
-sed -i '' -E 's/(Authorization=Bearer )[^"]+/\1REDACTED/' "$DOTFILES/.claude/settings.json"
+# This repo is public — strip work telemetry (incl. bearer token) and the org environment description
+jq 'del(.autoMode.environment) | .env |= with_entries(select(.key | test("^(OTEL_|CLAUDE_CODE_ENABLE_TELEMETRY$)") | not))' \
+  ~/.claude/settings.json > "$DOTFILES/.claude/settings.json"
 rsync -a --delete ~/.claude/commands/ "$DOTFILES/.claude/commands/"
 
 echo "Done. Review changes with: git diff"
