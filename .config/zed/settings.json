@@ -7,46 +7,65 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "debugger": {
+    "button": false
+  },
+  "diagnostics": {
+    "button": false
+  },
+  "search": {
+    "button": false
+  },
+  "cli_default_open_behavior": "new_window",
+  "file_finder": {
+    "include_ignored": "all"
+  },
   "collaboration_panel": {
+    "button": false,
     "dock": "left"
   },
+  "auto_update_extensions": {
+    "prisma": false,
+  },
+  "edit_predictions": {
+    "provider": "zed",
+  },
   "agent": {
+    "button": false,
     "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "gemini-3.1-pro-preview",
-      "enable_thinking": false
+      "provider": "openrouter",
+      "model": "openai/gpt-oss-20b:free",
+      "enable_thinking": false,
     },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
       "enable_thinking": true,
-      "effort": "high"
+      "effort": "high",
     },
     "dock": "left",
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "agent_servers": {
-    "opencode": {
-      "type": "registry"
-    },
     "claude-acp": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "git_panel": {
+    "button": false,
     "dock": "right",
-    "tree_view": true
+    "tree_view": true,
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   // ===============================
   // Vim
   // ===============================
   "vim_mode": true,
   "vim": {
-    "highlight_on_yank_duration": 80
+    "highlight_on_yank_duration": 80,
   },
   // ===============================
   // Editor Behavior
@@ -54,7 +73,7 @@
   "soft_wrap": "none",
   "relative_line_numbers": "enabled",
   "gutter": {
-    "line_numbers": true
+    "line_numbers": true,
   },
   "hover_popover_enabled": true,
   "hover_popover_delay": 300,
@@ -70,58 +89,56 @@
     "TypeScript": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "biome",
-        "..."
-      ],
+      "language_servers": ["biome", "..."],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true
-      }
+        "source.organizeImports.biome": true,
+      },
     },
     "TSX": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "biome",
-        "..."
-      ],
+      "language_servers": ["biome", "..."],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true
-      }
+        "source.organizeImports.biome": true,
+      },
     },
     "JavaScript": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "biome",
-        "..."
-      ],
+      "language_servers": ["biome", "..."],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true
-      }
+        "source.organizeImports.biome": true,
+      },
     },
     "JSX": {
       "format_on_save": "on",
       "formatter": "language_server",
-      "language_servers": [
-        "biome",
-        "..."
-      ],
+      "language_servers": ["biome", "..."],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true
-      }
+        "source.organizeImports.biome": true,
+      },
+    },
+    "JSON": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": ["biome", "..."],
+    },
+    "JSONC": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "language_servers": ["biome", "..."],
     },
     "Terraform": {
       "format_on_save": "on",
       "formatter": "language_server",
       "code_actions_on_format": {
-        "source.organizeImports": true
-      }
+        "source.organizeImports": true,
+      },
     },
     "Prisma": {
       "format_on_save": "on",
-      "formatter": "language_server"
-    }
+      "formatter": "language_server",
+    },
   },
   // ===============================
   // Terminal
@@ -129,29 +146,31 @@
   "terminal": {
     "env": {},
     "shell": {
-      "program": "zsh"
-    }
+      "program": "zsh",
+    },
   },
   // ===============================
   // Project Panel (Explorer) — docked right to match Cursor sidebar
   // ===============================
   "project_panel": {
+    "button": false,
     "dock": "right",
-    "show_diagnostics": "errors"
+    "show_diagnostics": "errors",
   },
   "outline_panel": {
+    "button": false,
     "dock": "right",
-    "git_status": false
+    "git_status": false,
   },
   // ===============================
   // Tabs & Preview
   // ===============================
   "tabs": {
     "git_status": true,
-    "show_diagnostics": "all"
+    "show_diagnostics": "errors",
   },
   "preview_tabs": {
-    "enable_preview_from_file_finder": false
+    "enable_preview_from_file_finder": false,
   },
   // ===============================
   // Theme — install "Catppuccin" extension via `zed: extensions`
@@ -160,26 +179,26 @@
     "players": [
       {
         "cursor": "#f9e2afff",
-        "selection": "#f9e2af40"
-      }
-    ]
+        "selection": "#f9e2af40",
+      },
+    ],
   },
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Catppuccin Mocha (Blur)"
+    "dark": "Catppuccin Mocha",
   },
   // ===============================
   // Font & UI
   // ===============================
-  "ui_font_size": 12,
-  "buffer_font_size": 12,
+  "ui_font_size": 16,
+  "buffer_font_size": 13,
   // ===============================
   // Icon Theme — install "Catppuccin Icons" for something close to ayu
   // ===============================
   "icon_theme": {
     "mode": "light",
     "light": "Material Icon Theme",
-    "dark": "Material Icon Theme"
+    "dark": "Material Icon Theme",
   },
 }
