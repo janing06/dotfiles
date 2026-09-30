@@ -137,11 +137,25 @@ When markdown docs need review (research, design, plan, etc.):
 - No need to split a single file across multiple commits
 
 ### Commit Message Style
+- **Always write commit messages in English**, even when the repository's existing history is in another language. This takes precedence over matching the repo's style below. (Applies to commit messages only — code comments and user-facing strings still follow the codebase. PR descriptions stay bilingual where that repo requires it.)
 - Match the repository's existing commit message format. Review previous commits and follow the dominant style. For example:
   - If the repo uses **Conventional Commits** (e.g., `feat:`, `fix:`), follow that format.
   - If the repo uses **imperative mood only** (e.g., `Add validation logic`, `Fix crash on load`), follow that instead.
 - **Base the commit message on the actual staged changes**, not just the most recent user instruction. Always inspect the staged diff and summarize that accurately.
 
+
+## Communication
+
+### Always translate non-English text into English
+
+I read English only. **Every** non-English string you surface must carry an English translation right beside it, in the same block. This applies to all projects and all languages, not just Japanese.
+
+- **Format**: inline parenthetical directly after the term — `入会申込 (enrollment application)`, `会費 (membership fee)`
+- **Block quotes**: put the English immediately beneath the quoted line. Quoting is not an exemption
+- **No exemptions for short or repetitive contexts**: markdown table cells, bulleted comparisons, enumerated field lists, and terms already glossed earlier in the same response all still need a gloss. A table of 20 non-English labels needs 20 glosses; if that makes it too wide, add a dedicated English column rather than dropping translations
+- **No exemptions for identifier-shaped text**: CSV/column headers, file and directory names, design tool frame/node names, enum values, code comments, commit messages and UI copy quoted from a codebase
+
+Untranslated text is unreadable to me and blocks my review, so treat a missing gloss as an error rather than a style nit.
 
 ## Decision Framework
 
@@ -204,6 +218,7 @@ When multiple valid approaches exist, choose based on:
 - Make assumptions - verify with existing code
 
 **ALWAYS**:
+- Before reviewing any PR, invoke the matching review skill via the Skill tool *before* forming opinions on the diff: `fe-review` for frontend changes, `be-review` for backend changes, both when the PR touches both. Do this even when a generic review skill (`review-pr`, `code-review`) is already loaded, and even when the same skill was invoked earlier in the session for a different PR — the generic skill supplies the process, the fe/be skill supplies the criteria and the rule files. If the project has no such skill, say so explicitly rather than silently substituting general judgment.
 - Update plan documentation as you go
 - Learn from existing implementations
 - Stop after 3 failed attempts and reassess
