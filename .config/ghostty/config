@@ -21,6 +21,9 @@ keybind = cmd+digit8=text:\x13\x38
 keybind = cmd+digit9=text:\x13\x39
  
 keybind = shift+enter=text:\n
+
+# option+backspace deletes a word everywhere, incl. tmux prompts (which ignore ESC DEL)
+keybind = alt+backspace=text:\x17
  
 keybind = super+shift+h=text:\x13\x70
 keybind = super+shift+l=text:\x13\x6e
