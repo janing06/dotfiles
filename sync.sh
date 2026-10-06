@@ -23,6 +23,9 @@ cp ~/.config/git/ignore "$DOTFILES/.config/git/ignore"
 # Karabiner (main config only — automatic_backups/ are excluded intentionally)
 cp ~/.config/karabiner/karabiner.json "$DOTFILES/.config/karabiner/karabiner.json"
 
+# Hammerspoon
+cp ~/.hammerspoon/init.lua "$DOTFILES/.hammerspoon/init.lua"
+
 # Neovim (full directory)
 rsync -a --delete --exclude .DS_Store ~/.config/nvim/ "$DOTFILES/.config/nvim/"
 
