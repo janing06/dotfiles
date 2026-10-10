@@ -6,8 +6,8 @@
 set clipboard=unnamed
 
 " ===== Leader = Space =====
-nunmap <Space>
-vunmap <Space>
+" Space's default (move right) is bound for all modes, so nunmap/vunmap don't remove it.
+unmap <Space>
 
 " ===== Clear highlights after searching =====
 nnoremap <Esc> :nohlsearch<CR>
@@ -19,8 +19,10 @@ nnoremap <Space>q :explorer<CR>
 " ===== New line below, stay in normal mode =====
 nnoremap <CR> o<Esc>
 
-" ===== Save file with Space + s =====
-nnoremap <Space>s :w<CR>
+" ===== Save file and git commit-and-sync with Space + s =====
+exmap gitsync obcommand obsidian-git:push
+nnoremap <Space>s :w<CR>:gitsync<CR>
+vnoremap <Space>s <Esc>:w<CR>:gitsync<CR>
 
 " ===== Disable arrow keys in normal mode =====
 " No <Nop> here (it gets typed literally); <Esc> is a no-op in normal mode.
