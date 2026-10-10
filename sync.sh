@@ -26,6 +26,9 @@ cp ~/.config/karabiner/karabiner.json "$DOTFILES/.config/karabiner/karabiner.jso
 # Hammerspoon
 cp ~/.hammerspoon/init.lua "$DOTFILES/.hammerspoon/init.lua"
 
+# Obsidian (vim keymaps for the Vimrc Support plugin, lives at the vault root)
+cp ~/Documents/"Obsidian Vault"/.obsidian.vimrc "$DOTFILES/.obsidian.vimrc"
+
 # Neovim (full directory)
 rsync -a --delete --exclude .DS_Store ~/.config/nvim/ "$DOTFILES/.config/nvim/"
 
